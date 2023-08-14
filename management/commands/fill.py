@@ -11,7 +11,7 @@ class Command(BaseCommand):
         ]
 
         products_for_create =[]
-        for products_item in products_list:
-            products_for_create.append(Product(products_item))
+        for product_item in products_list:
+            products_for_create.append(Product(product_item))
 
         Product.objects.bulk-create(products_for_create)
