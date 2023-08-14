@@ -1,8 +1,12 @@
 from django.shortcuts import render
 
-def index(reguest):
-    if reguest.mehtod == 'POST':
-        name = reguest.mehtod.POST.get('name')
-        email = reguest.mehtod.POST.get('email')
+def index(request):
+    if request.method == 'POST':
+        name = request.method.POST.get('name')
+        email = request.method.POST.get('email')
         print(f'{name} {email}')
-    return render(reguest, 'main/index.html')
+    return render(request, 'main/index.html')
+
+
+def home(request):
+    return render(request, 'main/home.html')
