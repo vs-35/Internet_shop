@@ -10,3 +10,14 @@ def index(request):
 
 def home(request):
     return render(request, 'main/home.html')
+
+
+def product(request, product_id):
+    product = Products.objects.get(pk=product_id)
+    context = {
+        'product': product,
+        'contacts_active': 'text-white',
+        'home_active': 'text-white',
+        'category_active': 'active',
+    }
+    return render(request, 'catalog/product.html', context)
